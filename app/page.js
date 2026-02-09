@@ -100,10 +100,14 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Dashboard content */}
+      {/* Dashboard content - both rendered, one hidden */}
       <main>
-        {activeTab === "revenue" && <RevenueDashboard />}
-        {activeTab === "debt" && <DebtDashboard />}
+        <div style={{ display: activeTab === "revenue" ? 'block' : 'none' }}>
+          <RevenueDashboard />
+        </div>
+        <div style={{ display: activeTab === "debt" ? 'block' : 'none' }}>
+          <DebtDashboard />
+        </div>
       </main>
     </div>
   );
